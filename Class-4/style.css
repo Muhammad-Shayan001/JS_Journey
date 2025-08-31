@@ -1,0 +1,82 @@
+* {
+    background-color: black;
+    color: white;
+    font-family: serif;
+
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+
+}
+
+.box>h1 {
+    background-color: transparent;
+
+}
+
+@keyframes example {
+    0% {
+        left: 0px;
+        top: 0px;
+        background-color: white;
+
+    }
+
+    20%{
+
+        left:  0px;
+        top: 100px;
+    }
+    40%{
+        left: 0px;
+        top: 200px;
+
+    }
+    60%{
+        left: 0px;
+        top: 300px;
+    }
+    80%{
+        left: 0px;
+        top: 400px;
+    }
+    100%{
+        left: 0px;
+        top: 500px;
+        background-color: black;
+
+    }
+
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    background-color: red;
+    color: azure;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: all  5s;
+
+
+    animation-name: example;
+    animation-duration: 1s;
+    position: relative;
+    animation-play-state: running;
+    animation-fill-mode:  forwards;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+    animation-iteration-count: infinite;
+    
+
+
+}

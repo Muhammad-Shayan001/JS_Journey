@@ -1,5 +1,8 @@
 // // ==========Array Elements===========
 
+// couples name
+
+
 let peoples = ["waqas", "sara", "ali", "tahiya", "muhtashim", "alisha", "shayan", "fatima", "umar", a];
 var a = "maryam";
 console.log(peoples);

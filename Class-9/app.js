@@ -15,9 +15,9 @@ if (a === b) {
 }
 
 // ============================================================
-let fName = prompt("Enter Your Name");
+// let fName = prompt("Enter Your Name");
 
-console.log(fName);
+// console.log(fName);
 
 let age = prompt("Enter Your Age");
 if( age >= 18){

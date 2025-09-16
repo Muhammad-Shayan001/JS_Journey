@@ -1,0 +1,145 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7fafc;
+    color: #1a202c;
+    line-height: 1.6;
+}
+
+/* 2. Header & Footer */
+header, footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+footer {
+    margin-top: 4rem;
+    border-bottom: none;
+    border-top: 1px solid #e2e8f0;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+/* 3. Main Content & Layout */
+main {
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.product-grid {
+    display: grid;
+    gap: 2rem;
+    /* Responsive grid: 1 col on small screens, 2 on medium, 3 on large */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* 4. Product Card Styling */
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.product-image-container {
+    width: 100%;
+    height: 250px; /* Fixed height for uniform look */
+    padding: 1rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures image fits without distortion */
+}
+
+.product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows this section to fill remaining space */
+    border-top: 1px solid #e2e8f0;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #1a202c;
+    /* Truncate long titles */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.2rem; /* Reserve space for two lines */
+}
+
+.product-category {
+    font-size: 0.85rem;
+    color: #718096;
+    margin: 0 0 1rem 0;
+    text-transform: capitalize;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #3182ce;
+    margin: auto 0 0 0; /* Pushes price to the bottom */
+}
+
+/* 5. Loading Spinner & Messages */
+.loading {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #e2e8f0;
+    border-top-color: #3182ce;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 5rem auto;
+}
+
+
+.error-message {
+    text-align: center;
+    color: #ff0202;
+    font-size: 1.2rem;
+    padding: 3rem;
+    font-size: 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

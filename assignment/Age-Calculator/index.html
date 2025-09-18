@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+</head>
+<body>
+    <script>
+        function calculateAge() {
+            let dob = prompt("Enter your Date of Birth (YYYY-MM-DD):");
+            if (!dob) {
+                alert("Please enter a valid date of birth.");
+                return;
+            }
+            let birthDate = new Date(dob);
+            let today = new Date();
+            
+            let years = today.getFullYear() - birthDate.getFullYear();
+            let months = today.getMonth() - birthDate.getMonth();
+            let days = today.getDate() - birthDate.getDate();
+            
+            if (days < 0) {
+                months--;
+                let prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+            
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            
+            alert(`Your Age is ${years} years, ${months} months, and ${days} days.`);
+        }
+        
+        calculateAge();
+    </script>
+</body>
+</html>

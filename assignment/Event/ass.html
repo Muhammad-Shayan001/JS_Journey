@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Box on Click</title>
+    <style>
+        body {
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .box-text {
+            position: absolute;
+            top: 120px;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="moveBox(this)">Click Me!</button>
+
+    <script>
+        let box, textElement;
+        let messages = ["Hello!", "I'm Moving!", "Click Again!", "Watch Me!", "Surprise!", "Try Again!"];
+
+        function moveBox(button) {
+            if (!box) {
+                // Create the box if it doesn't exist
+                box = document.createElement("div");
+                box.className = "box";
+                box.innerHTML = "Move Me!";
+                document.body.appendChild(box);
+
+                // Create text below the box
+                textElement = document.createElement("div");
+                textElement.className = "box-text";
+                textElement.innerHTML = "Click to Move!";
+                document.body.appendChild(textElement);
+
+                // Initial random position
+                box.style.left = Math.random() * (window.innerWidth - 100) + "px";
+                box.style.top = Math.random() * (window.innerHeight - 100) + "px";
+
+                // Add hover effect
+                box.onmouseover = function () {
+                    let newSize = Math.random() * 100 + 100; // Random size between 100-200px
+                    let newRotate = Math.random() * 360; // Random rotation
+                    this.style.width = newSize + "px";
+                    this.style.height = newSize + "px";
+                    this.style.transform = `rotate(${newRotate}deg)`;
+                };
+            }
+
+            // Move box to a new position on every click
+            let newX = Math.random() * (window.innerWidth - 100);
+            let newY = Math.random() * (window.innerHeight - 100);
+            let newColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`; // Random color
+
+            box.style.left = newX + "px";
+            box.style.top = newY + "px";
+            box.style.backgroundColor = newColor;
+
+            // Change text inside the box and below it
+            let randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            box.innerHTML = randomMessage;
+            textElement.innerHTML = randomMessage;
+
+            // Change button text
+            button.innerHTML = "Click Again!";
+        }
+    </script>
+
+</body>
+</html>

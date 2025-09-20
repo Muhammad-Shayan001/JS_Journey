@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assingment</title>
+    <script defer src="app.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image"
+        style="display: flex;justify-content: center;align-items: start;;height: 100vh;background-color: black;color: white;padding: 10px;padding-top: 200px;">
+        <h2>Hover over the image to change it</h2>
+
+        <img onmouseenter="imageChange()" onmouseleave="imageReturn()" id="image" width="300px"
+            style="position: relative;top:100px;right:300px"
+            src="https://st.depositphotos.com/2001755/3622/i/450/depositphotos_36220949-stock-photo-beautiful-landscape.jpg"
+            alt="Hover to change">
+    </div>
+
+</body>
+
+</html>

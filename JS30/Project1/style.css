@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+    /* background-color: black; */
+}
+.box{
+    gap: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url("Music.671Z.png");
+    background-size: cover;
+
+}
+.key{
+    
+
+    width: 100px;
+    height: 100px;
+    border: 4px solid transparent ;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #00000000;
+    transition: ease all 0.7s;
+    cursor: pointer;
+}
+
+
+.playing {
+    background-color: #006eff;
+  transform: scale(1.5);
+
+  border-color: #0026ff;
+  box-shadow: 0 0 1rem #006effd3;
+}
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #0066ffee;
+}

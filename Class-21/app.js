@@ -49,10 +49,10 @@ Array.prototype.details = function () {
 
 // inheritence 
 
-  const User = {
-    userName : 'Ali',
-    age : 20
-  } 
+  // const User = {
+  //   userName : 'Ali',
+  //   age : 20
+  // } 
 
 const Teacher = {
   makeVedio : true

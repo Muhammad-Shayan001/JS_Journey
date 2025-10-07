@@ -8,5 +8,7 @@ function createUser(userName , email , passward){
     this.email = email
     this.passward = passward
 }
-const user = new createUser('shayan' , 'shayan@gmail.com' ,12345)
+const user = new createUser('Shayan' , 'shayan@gmail.com' ,12345)
+const user0 = new createUser('Ali' , 'ali@gmail.com' ,1234523)
 console.log(user);
+console.log(user0)
